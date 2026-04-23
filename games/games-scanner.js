@@ -62,7 +62,7 @@ async function createGameDiv(name, url, developer) {
     };
 
     const safeName = name.replace(":", ".")
-    gameDiv.style.background = `url("games/thumbnails/` + safeName + `.jpg")`;
+    gameDiv.style.background = `url("games/thumbnails/` + safeName + `.webp")`;
     return gameDiv;
 }
 
@@ -157,6 +157,7 @@ async function nextPage() {
 
 function togglePlayMode() {
     playerEnabled = !playerEnabled;
+    document.body.className = playerEnabled ? "" : "download-mode";
     refreshPlaymodeButton();
 }
 

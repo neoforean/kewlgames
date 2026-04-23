@@ -1,0 +1,39 @@
+body,
+header {
+    transition: all 1s;
+}
+
+.download-mode header {
+    background: linear-gradient(rgb(114, 75, 255), rgb(28, 4, 66));
+}
+
+body.download-mode {
+    background-color: rgb(12, 8, 24);
+}
+
+.download-mode button {
+    background-color: rgb(179, 228, 0);
+    border-bottom: 1px solid rgba(193, 255, 164, 0.288);
+}
+
+.download-mode button:hover {
+    background-color: rgb(139, 177, 0);
+}
+
+.download-mode button:disabled {
+    background-color: rgb(69, 88, 0);
+}
+
+.download-mode .playmode-button {
+    border-bottom: 1px solid rgba(188, 164, 255, 0.288);
+    background-color: rgb(41, 34, 82) !important;
+}
+
+.download-mode .playmode .off:before {
+    background-color: rgb(96, 255, 43);
+}
+
+.download-mode .playmode-container {
+    background-color: rgb(37, 25, 68);
+    border-bottom: 1px solid rgba(205, 164, 255, 0.288);
+}

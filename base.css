@@ -122,7 +122,7 @@ button:disabled {
     position: absolute;
     top: 6px;
     left: auto;
-    transform: translateX(3px);
+    animation: 0.3s playmode-off-animation forwards cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .playmode .off:before {
@@ -135,7 +135,25 @@ button:disabled {
     position: absolute;
     top: 6px;
     left: auto;
-    transform: translateX(-20px);
+    animation: 0.3s playmode-on-animation forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes playmode-on-animation {
+    0% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes playmode-off-animation {
+    0% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(3px);
+    }
 }
 
 .playmode-container {
