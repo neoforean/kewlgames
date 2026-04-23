@@ -16,7 +16,7 @@ awk -v lines="$LINES_PER_FILE" -v prefix="$OUTPUT_PREFIX" '
   max_file = file
 }
 END {
-  # extract number from page string]
+  # extract number from page string
   gsub(/[^0-9]/, "", max_file)
   print max_file > "count"
 }
