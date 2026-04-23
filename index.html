@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="base.css">
+    <script src="games/games-scanner.js"></script>
+    <title>kewlgames</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+        <div class="header-centered-container">
+            <div class="pagination-container">
+                <button onclick="downloadWholeCurrentPage()">Download whole page</button>
+
+                <button onclick="previousPage()">PREV</button>
+                <div class="pagination-buttons">
+                </div>
+                <button onclick="nextPage()">NEXT</button>
+
+                <div class="playmode-container">
+                    Download
+                    <div class="playmode" onclick="togglePlayMode()">
+                        <button class="playmode-button off"></button>
+                    </div>
+                    Play
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="games-grid-container">
+        <div class="games-grid">
+        </div>
+    </div>
+</body>

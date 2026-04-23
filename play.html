@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="ruffle-new/ruffle.js"></script>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="player.css">
+    <title>kewlgames</title>
+</head>
+
+<body>
+    <header>
+        <script>
+            function home() {
+                let a = 'http://' + document.location.host;
+                if (a.includes("github.io")) {
+                    a += "/kewlgames/";
+                }
+                document.location = a;
+            }
+        </script>
+        <div class="logo" style="cursor:pointer" onclick="home()"></div>
+    </header>
+    <div class="player-container">
+    </div>
+    <div class="game-info-container">
+        <p>This game's developer(s):<br><strong id="author">loading..</strong></p>
+    </div>
+    <script src="player.js"></script>
+</body>

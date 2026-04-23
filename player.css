@@ -1,0 +1,36 @@
+.player-container {
+    display: flex;
+    aspect-ratio: 4/3;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    justify-content: center;
+    justify-self: center;
+}
+
+body {
+    background-color: black;
+    color: rgb(49, 49, 49)
+}
+
+header {
+    background: transparent;
+}
+
+.logo {
+    opacity: 25%;
+    transition: 0.3s all;
+}
+
+.logo:hover {
+    opacity: 100%;
+}
+
+.game-info-container {
+    margin-left: 20px;
+    margin-top: -24px;
+}
+
+.game-info-container:hover {
+    color: rgb(252, 252, 252)
+}
