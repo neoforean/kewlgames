@@ -101,7 +101,10 @@ async function getGamesPage(pageNum) {
 async function loadGame(gamePath, developer) {
     gamePathEncoded = btoa(gamePath);
     const absoluteGameUrl = document.baseURI + "play.html?game=" + gamePathEncoded + "&author=" + developer;
-    document.location = absoluteGameUrl;
+    document.body.className = "playenter";
+    setTimeout(() => {
+        document.location = absoluteGameUrl;
+    }, 200);
 }
 
 async function populateGamesGridWithGames(pageNum) {

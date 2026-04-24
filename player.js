@@ -22,22 +22,30 @@ absoluteGameUrl = absoluteGameUrl.replace("//ga", "/ga");
 let swfDir = absoluteGameUrl.substring(0, absoluteGameUrl.lastIndexOf('/') + 1);
 swfDir = swfDir.replace("//ga", "/ga");
 
-window.RufflePlayer = window.RufflePlayer || {};
-window.addEventListener("load", (event) => {
-  const ruffle = window.RufflePlayer.newest();
-  const player = ruffle.createPlayer();
-  playerContainer.appendChild(player);
-  player.load({
-    url: absoluteGameUrl,
-    base: swfDir,
-    backgroundColor: "#000",
-    allowScriptAccess: "always",
+// check whether it's an .html file
+if (absoluteGameUrl.endsWith("/index.html")) {
+  // html file detected
+  const iframe = document.createElement('iframe');
+  iframe.src = swfDir;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.frameBorder = '0';
+  playerContainer.appendChild(iframe);
+}
+else {
+  // swf file detected
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.addEventListener("load", (event) => {
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    playerContainer.appendChild(player);
+    player.load({
+      url: absoluteGameUrl,
+      base: swfDir,
+      backgroundColor: "#000",
+      allowScriptAccess: "always",
+    });
+    player.style.height = "100%";
+    player.style.width = "100%";
   });
-  player.style.height = "100%";
-  player.style.width = "100%";
-});
-
-function closeRuffleReminder() {
-  const reminderP = document.getElementById("x");
-  reminderP.parentNode.removeChild(x);
 }

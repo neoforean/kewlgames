@@ -29,8 +29,21 @@ header {
 .game-info-container {
     margin-left: 20px;
     margin-top: -24px;
+    animation: 1s slideIn forwards;
 }
 
 .game-info-container:hover {
     color: rgb(252, 252, 252)
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0%;
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateX(0)
+    }
 }

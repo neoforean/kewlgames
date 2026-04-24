@@ -142,6 +142,7 @@ button:disabled {
     0% {
         transform: translateX(3px);
     }
+
     100% {
         transform: translateX(-20px);
     }
@@ -151,6 +152,7 @@ button:disabled {
     0% {
         transform: translateX(-20px);
     }
+
     100% {
         transform: translateX(3px);
     }
@@ -165,4 +167,28 @@ button:disabled {
     padding: 0 6px 0 6px;
     border-bottom: 1px solid rgba(164, 185, 255, 0.288);
     font-size: 13px;
+}
+
+body.playenter, body.playenter > header{
+    animation: 0.2s playmode-enter forwards; 
+}
+
+body.playenter .games-grid div, body.playenter .header-centered-container{
+    animation: 0.2s playmode-enter-game forwards;
+}
+
+@keyframes playmode-enter {
+    100% {
+        filter:brightness(0.55) contrast(1.2);
+        background-color: black;
+    }
+}
+
+@keyframes playmode-enter-game {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
 }
