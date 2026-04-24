@@ -23,7 +23,7 @@ let swfDir = absoluteGameUrl.substring(0, absoluteGameUrl.lastIndexOf('/') + 1);
 swfDir = swfDir.replace("//ga", "/ga");
 
 // check whether it's an .html file
-if (absoluteGameUrl.endsWith("/index.html")) {
+if (absoluteGameUrl.endsWith("index.html")) {
   // html file detected
   const iframe = document.createElement('iframe');
   iframe.src = swfDir;
